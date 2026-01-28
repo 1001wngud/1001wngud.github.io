@@ -10,7 +10,7 @@ permalink: /projects/cfd/
 - 문제정의: BFS에서 재부착 길이 x/H와 속도/난류 프로파일이 격자·벽처리·난류모델에 얼마나 민감한가? ‘재현 가능한 안정 세팅’은 무엇인가?
 - 도구: OpenFOAM
 - 성공 기준: NASA TMR과 비교
-- 최종 정리: [2D BFS V&V]
+- 최종 정리: [2D BFS V&V](/projects/cfd/log/environment/)
   
 ## Logs
 - [환경 구축: Windows에서 WSL2 + Ubuntu + OpenFOAM 설치](/projects/cfd/log/environment-setup/)
