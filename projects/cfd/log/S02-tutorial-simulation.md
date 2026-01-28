@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "튜토리얼: OpenFOAM 예제 실행 + paraFoam"
+title: "튜토리얼: OpenFOAM 간단한 예제 코드 + paraFoam 실행"
 permalink: /projects/cfd/log/tutorial-simulation/
 ---
 
