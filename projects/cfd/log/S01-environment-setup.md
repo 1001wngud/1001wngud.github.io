@@ -34,7 +34,7 @@ wsl 중에서도 Ubuntu 라는 기본 프로그램을 바탕으로 설치하였�
 
 <figure>
   <img src="/assets/images/setting2image.png" alt="Ubuntu 접속" />
-  <figcaption>그림 1) 계정 생성 후 Ubuntu 접속</figcaption>
+  <figcaption>그림 2) 계정 생성 후 Ubuntu 접속</figcaption>
 </figure>
 
 그럼 사진과 같이 Ubuntu로 접속된다.
