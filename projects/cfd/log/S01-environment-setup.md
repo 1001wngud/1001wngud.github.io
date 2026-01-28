@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "환경 구축: Windows에서 WSL2 + Ubuntu + OpenFOAM 설치 & 튜토리얼 테스트"
+title: "환경 구축: Windows에서 WSL2 + Ubuntu + OpenFOAM 설치"
 permalink: /projects/cfd/log/environment-setup/
 ---
 
