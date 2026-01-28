@@ -11,4 +11,4 @@ title: CFD(Openfoam)
 - 다음:
 
 ## Logs
-- [2026-01-28](./log/environment-setup/)
+- [환경 구축: Windows에서 WSL2 + OpenFOAM 설치 & 튜토리얼 테스트](./log/environment-setup/)
