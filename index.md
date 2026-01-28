@@ -1,4 +1,7 @@
-# Portfolio
+---
+layout: home
+title: Portfolio
+---
 
 ## Projects
 - [Spectroscopy Cytometry](./projects/cytometry/)
