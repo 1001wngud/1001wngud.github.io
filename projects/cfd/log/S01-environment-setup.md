@@ -32,7 +32,14 @@ wsl 중에서도 Ubuntu 라는 기본 프로그램을 바탕으로 설치하였�
 
 이때 비밀번호 입력할 때 비밀번호가 화면에 아무것도 입력 안되는 것처럼 안보이는데 blind typing이라고 정상이다.
 
-이제 Ubuntu라는 리눅스형 cmd? 에서 기본적인 세팅을 먼저 하였다.
+<figure>
+  <img src="/assets/images/setting2image.png" alt="Ubuntu 접속" />
+  <figcaption>그림 1) 계정 생성 후 Ubuntu 접속</figcaption>
+</figure>
+
+그럼 사진과 같이 Ubuntu로 접속된다.
+
+이제 Ubuntu라는 리눅스형 cmd? 에서 기본적인 세팅을 설정할 차례다.
 
 ---
 
