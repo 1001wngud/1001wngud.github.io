@@ -71,6 +71,11 @@ sudo nano /etc/apt/sources.list.d/ubuntu.sources
 
 목적은 나는 한국에서 실행하고 있기 때문에 한국 지역에 맞는 주소로 바꿔서 프로그램을 더빠르게 최적화 시키는 것이 목적이였다.
 
+<figure>
+  <img src="/assets/images/setting1image.png" alt="한국 지역 주소로 변경" />
+  <figcaption>그림 4) 한국 지역 주소로 변경</figcaption>
+</figure>
+
 따라서 들어가면 보통
 
 ```
