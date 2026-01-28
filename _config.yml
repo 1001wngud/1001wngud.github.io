@@ -1,2 +1,8 @@
 title: "1001wngud Portfolio"
 theme: minima
+
+header_pages:
+  - index.md
+  - projects/cfd/index.md
+  - projects/cytometry/index.md
+  - projects/rocket/index.md
