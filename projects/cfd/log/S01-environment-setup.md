@@ -51,6 +51,11 @@ wsl -l -v
 
 2026.01 기준 wsl2 버전이 최신이기에 이버전을 사용하였다.
 
+<figure>
+  <img src="/assets/images/setting3image.png" alt=" wsl 명령 대상 오류" />
+  <figcaption>그림 3) wsl 명령 대상 오류</figcaption>
+</figure>
+
 처음에는 command not found가 떠서 놀라는 경우도 있었는데 지금 cmd에 떠있는 상태 즉 명령 내리는 위치가 리눅스인지 윈도우인지 잘 확인해보고 명령해야한다.
 
 command not found가 뜬 이유는 Ubuntu(WSL 리눅스)안에 들어가 있는 상태라서, `wsl -l -v`를 치면 리눅스에는 wsl이라는 명령어가 없어서 저렇게 뜨는 거다.  
