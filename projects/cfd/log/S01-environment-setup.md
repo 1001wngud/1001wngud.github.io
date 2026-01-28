@@ -15,6 +15,11 @@ permalink: /projects/cfd/log/environment-setup/
 
 OpenFOAM은 리눅스기반 프로그램이기에 Windows 11 Pro OS를 사용하는 나는 가상 환경을 구축하기로 결정했다.
 
+<figure>
+  <img src="/assets/images/setting1image.png" alt="WSL 설치 화면" />
+  <figcaption>그림 1) WSL 설치 후 Ubuntu 계정 생성 화면</figcaption>
+</figure>
+
 먼저 Linux용 Windows 하위 시스템을 깔기 위해 PowerShell을 관리자 권한으로 실행시키고 아래 명령어를 먼저 쳐줬다.  
 (이건 **Windows PowerShell**에서 실행)
 
