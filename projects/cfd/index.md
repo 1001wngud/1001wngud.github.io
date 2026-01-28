@@ -1,14 +1,14 @@
 ---
-title: CFD(Openfoam)
+layout: page
+title: CFD (OpenFOAM)
+permalink: /projects/cfd/
 ---
 
-# Study CFD(Openfoam)
-
-## hi
+## TL;DR
 - 목표:
 - 방법:
 - 결과:
 - 다음:
 
-## Logs
-- [환경 구축: Windows에서 WSL2 + OpenFOAM 설치 & 튜토리얼 테스트](./log/environment-setup/)
+## Logs (최신이 위)
+- [환경 구축: Windows에서 WSL2 + Ubuntu + OpenFOAM 설치 & 튜토리얼 테스트](/projects/cfd/log/environment-setup/)
