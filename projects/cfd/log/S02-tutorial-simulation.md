@@ -205,7 +205,7 @@ pwd
 ls
 ```
 
-내 출력은 아래와 같다. (그대로)
+내 출력은 아래와 같다.
 
 ```
 joo@JOO-DESKTOP:~/OpenFOAM/joo-13/run$ source /opt/openfoam13/etc/bashrc
@@ -252,7 +252,7 @@ tail -n 30 log.foamRun
 checkMesh | tee log.checkMesh
 ```
 
-내 출력은 아래와 같다. (그대로)
+내 출력은 아래와 같다.
 
 ```
 joo@JOO-DESKTOP:~/OpenFOAM/joo-13/run/pitzDailySteady$ tail -n 30 log.foamRun
@@ -376,7 +376,7 @@ Mesh OK.
 End
 ```
 
-여기까지로 “튜토리얼 실행” 자체는 완료.
+여기까지 튜토리얼 실행을 잘 마칠 수 있었다.
 
 ---
 
@@ -410,3 +410,5 @@ I/O    : uncollated
 </figure>
 
 ParaView 창은 이런식으로 나왔다.
+
+이제 OpenPOAM과 ParaView를 통해 앞으로 BFS V&V 프로젝트를 진행할 것이다.
