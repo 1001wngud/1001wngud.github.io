@@ -1,4 +1,3 @@
-# Detection of impurities in fluid using flow cytometry
 
 <figure>
   <img src="/assets/images/flow1.PNG" alt="슬라이드1" />
