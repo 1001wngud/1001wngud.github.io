@@ -393,8 +393,8 @@ paraFoam
 내 터미널 출력은 아래처럼 나왔다.
 
 <figure>
-  <img src="/assets/images/tutorial1.png" alt="Paraview 실행" />
-  <figcaption>그림 1) Paraview 실행 </figcaption>
+  <img src="/assets/images/tutorial1.png" alt="ParaView 실행" />
+  <figcaption>그림 1) ParaView 실행 </figcaption>
 </figure>
 
 ```
@@ -405,8 +405,8 @@ I/O    : uncollated
 
 
 <figure>
-  <img src="/assets/images/tutorial2.png" alt="Paraview 실행" />
-  <figcaption>그림 1) Paraview 실행 </figcaption>
+  <img src="/assets/images/tutorial2.png" alt="ParaView" />
+  <figcaption>그림 2) ParaView </figcaption>
 </figure>
 
 ParaView 창은 이런식으로 나왔다.
