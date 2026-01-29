@@ -1,4 +1,8 @@
-## Detection of impurities in fluid using flow cytometry
+---
+layout: page
+title: "Detection of impurities in fluid using flow cytometry"
+permalink: /projects/cytometry/log/flow_cytometry/
+---
 
 <figure>
   <img src="/assets/images/flow1.PNG" alt="슬라이드1" />
