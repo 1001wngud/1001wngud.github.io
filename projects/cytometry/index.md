@@ -1,8 +1,6 @@
 ---
-title: Spectroscopy Cytometry
+title: Detection of impurities in fluid using flow cytometry
 ---
-
-# Spectroscopy Cytometry
 
 ## TL;DR
 - 목표:
@@ -11,4 +9,4 @@ title: Spectroscopy Cytometry
 - 다음:
 
 ## Logs
-- [2026-01-28](./log/2026-01-28.md)
+- [대장균 검출 시스템 제안](./log/2026-01-28.md)
