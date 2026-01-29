@@ -118,7 +118,7 @@ FOAM exiting
 
 - 그런데도 `blockMesh`, `foamRun`은 실행이 됐고, 실행 위치가 여기로 찍혔다:  
   `Case : /home/joo/OpenFOAM/joo-13/run`  
-  → 즉, 케이스 폴더가 아니라 **run 폴더에서 그냥 실행해버린 것**.
+  → 즉, 케이스 폴더가 아니라 **run 폴더에서 그냥 실행해버렸던 것이다.**.
 
 그래서 OpenFOAM이 케이스 기본 파일을 못 찾는다는 에러로 이어졌다.
 
