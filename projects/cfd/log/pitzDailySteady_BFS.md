@@ -1,10 +1,8 @@
 ---
 layout: page
-title: 2D BFS (pitzDailySteady) V&V
+title: pitzDailySteady BFS(Backward-Facing Step) 2D
 permalink: /projects/cfd/log/pitzDailySteady_BFS/
 ---
-
-# pitzDailySteady BFS(Backward-Facing Step) 2D
 
 ## 재부착 길이 추출, 파이프라인 구축, 난류모델 민감도 측정
 
