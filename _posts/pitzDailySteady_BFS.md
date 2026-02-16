@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: single
 title: pitzDailySteady BFS(Backward-Facing Step) 2D
 mathjax: true
 ---
