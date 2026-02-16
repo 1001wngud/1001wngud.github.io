@@ -1,8 +1,43 @@
-title: "1001wngud Portfolio"
-theme: minima
+title: "JOOs CFD Study"
+description: "Control · Dynamics · Robotics · Vision"
+lang: "en"
+timezone: "Asia/Seoul"
 
-header_pages:
-  - index.md
-  - projects/cfd/index.md
-  - projects/cytometry/index.md
-  - projects/rocket/index.md
+remote_theme: "mmistakes/minimal-mistakes"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-include-cache
+
+mathjax: true
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+
+minimal_mistakes_skin: "default"
+
+
+nav:
+  - title: "About"
+    url: /about/
+  - title: "Posts"
+    url: /posts/
+  - title: "Projects"
+    url: /projects/
+
+
+author:
+  name: "Joohyung Jung"
+  bio: "Mechanical Engineering student."
+  location: "Seoul, Korea"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/1001wngud"
