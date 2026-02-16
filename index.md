@@ -1,9 +1,4 @@
 ---
 layout: home
-title: Portfolio
+author_profile: true
 ---
-
-## Projects
-- [CFD / OpenFOAM](./projects/cfd/)
-- [Rocket Club](./projects/rocket/)
-- [Spectroscopy Cytometry](./projects/cytometry/) 
