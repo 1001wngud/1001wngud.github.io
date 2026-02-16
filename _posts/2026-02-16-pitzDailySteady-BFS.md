@@ -1425,3 +1425,5 @@ done
 **의문**
 
 **왜 차이가 났을까**
+
+![image.png]({{ '/assets/posts/2026-02-16-pitzDailySteady-BFS/1.png' | relative_url }})
