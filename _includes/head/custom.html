@@ -17,158 +17,100 @@
 <link rel="stylesheet" href="{{ '/assets/css/rouge-base16-solarized-light.css' | relative_url }}">
 
 <style>
-  /* 포스트 페이지 폭과 여백 조정 */
+  :root {
+    --content-max-width: 760px;
+    --content-font-size: 16px;
+    --content-line-height: 1.72;
+    --content-letter-spacing: 0.01em;
+    --code-bg: rgba(135, 131, 120, 0.15);
+    --code-fg: #111111;
+  }
+
   #main {
-    max-width: 1500px; /* 모든 화면에서 최대 폭 제한 */
+    max-width: 1500px;
     padding-inline: 2em;
   }
-  
+
   @media (min-width: 64em) {
-    #main {
-      padding-inline: 3em;
-    }
+    #main { padding-inline: 3em; }
   }
-  
+
   @media (min-width: 80em) {
-    #main {
-      padding-inline: 4em;
-    }
+    #main { padding-inline: 4em; }
   }
-  
-  /* 작은 화면에서도 페이지 폭 제한 */
-  .page {
-    max-width: 1500px;
-    margin-inline: auto;
+
+  .page__inner-wrap {
+    max-width: var(--content-max-width) !important;
+    margin-inline: auto !important;
   }
-  
-  /* 데스크톱 (460px 이상): 콘텐츠 폭과 글자 크기 고정 */
-  @media (min-width: 460px) {
-    .page__inner-wrap {
-      max-width: 724px !important;
-      margin-inline: auto !important;
-    }
-    
+
+  .page__content,
+  .page__content p,
+  .page__content li,
+  .page__content td {
+    font-size: var(--content-font-size) !important;
+    line-height: var(--content-line-height) !important;
+    letter-spacing: var(--content-letter-spacing);
+  }
+
+  .page__content {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .page__content p,
+  .page__content li,
+  .page__content td,
+  .page__content div {
+    max-width: none !important;
+    margin-inline: 0 !important;
+  }
+
+  .page__content p { margin: 0 0 1em; }
+  .page__content li { margin-bottom: 0.35em; }
+
+  @media (max-width: 700px) {
     .page__content,
     .page__content p,
     .page__content li,
-    .page__content td,
-    .page__content div {
-      max-width: 724px !important;
-      margin-inline: auto !important;
-      font-size: 16px !important; /* 절대 크기 고정 (16px × 0.8) */
+    .page__content td {
+      font-size: 15px !important;
+      letter-spacing: 0.005em;
     }
   }
-  
-  /* 768px, 1024px 브레이크포인트에서도 글자 크기 고정 */
-  @media (min-width: 768px) {
-    .page__content,
-    .page__content p,
-    .page__content li,
-    .page__content td,
-    .page__content div {
-      font-size: 16px !important;
-    }
+
+  .page__content :not(pre) > code,
+  .page__content code.highlighter-rouge {
+    background: var(--code-bg) !important;
+    color: var(--code-fg) !important;
+    border: 1px solid rgba(135, 131, 120, 0.35);
+    border-radius: 6px;
+    padding: 0.12em 0.4em;
   }
-  
-  @media (min-width: 1024px) {
-    .page__content,
-    .page__content p,
-    .page__content li,
-    .page__content td,
-    .page__content div {
-      font-size: 16px !important;
-    }
-  }
-  
-  /* 모바일 (460px 미만): 반응형 (좌우 여백과 글자 크기) */
-  @media (max-width: 459px) {
-    .page__inner-wrap,
-    .page__content {
-      max-width: 100% !important;
-      padding-inline: 1em;
-    }
-    
-    .page__content {
-      font-size: 0.8em; /* 모바일은 상대 크기 */
-    }
-  }
-  
-  /* 코드 스니펫 글자 크기 조정 */
-  @media (min-width: 460px) {
-    /* 코드 블록만 12px */
-    .page__content pre,
-    .page__content pre code {
-      font-size: 12px !important;
-    }
-    
-    /* 인라인 코드는 (14px) */
-    .page__content p code,
-    .page__content li code,
-    .page__content td code,
-    .page__content h1 code,
-    .page__content h2 code,
-    .page__content h3 code,
-    .page__content h4 code {
-      font-size: 14px !important;
-    }
-  }
-  
-  @media (max-width: 459px) {
-    .page__content pre,
-    .page__content pre code {
-      font-size: 0.75em; /* 모바일 코드 블록 */
-    }
-    
-    .page__content p code,
-    .page__content li code,
-    .page__content td code {
-      font-size: 0.8em; /* 모바일 인라인 코드 */
-    }
-  }
-  
-  /* 제목 크기 조정 (0.7em일 때와 동일한 크기 유지) */
-  .page__content h1 {
-    font-size: 2em; /* 0.7 × 2.29 = 0.8 × 2 */
-  }
-  
-  .page__content h2 {
-    font-size: 1.5em; /* 0.7 × 1.71 = 0.8 × 1.5 */
-  }
-  
-  .page__content h3 {
-    font-size: 1.2em; /* 0.7 × 1.37 = 0.8 × 1.2 */
-  }
-  
-  .page__content h4 {
-    font-size: 1em; /* 0.7 × 1.14 = 0.8 × 1 */
-  }
-  
-  /* 코드 블록 배경색 및 기본 글자색 (Solarized Light) */
+
+  .page__content pre,
+  .page__content pre.highlight,
+  .page__content pre code,
+  .page__content .highlight,
+  .page__content .highlight pre,
   .page__content div.highlighter-rouge,
-  .page__content figure.highlight,
-  .page__content pre {
-    background-color: #fdf6e3 !important;
-    color: #586e75;
+  .page__content figure.highlight {
+    background: var(--code-bg) !important;
+    color: var(--code-fg) !important;
+    border-radius: 8px;
   }
 
-  /* 인라인 코드만 배경 적용 (블록 코드 제외) */
-  .page__content :not(pre) > code {
-    background-color: #fdf6e3;
+  .page__content pre,
+  .page__content pre code {
+    font-size: 12px !important;
+    line-height: 1.55;
   }
 
-  /* 저대비 토큰(식별자/내장명 등) 대비 강화 */
-  .page__content .highlight .n,
-  .page__content .highlight .nb,
-  .page__content .highlight .bp,
-  .page__content .highlight .nn,
-  .page__content .highlight .nc,
-  .page__content .highlight .no,
-  .page__content .highlight .nf,
-  .page__content .highlight .nv {
-    color: #2f2f2f;
+  .page__content .highlight .gh {
+    background: transparent !important;
+    color: var(--code-fg) !important;
   }
 
-  /* 제목과 첫 헤더 분리 (여백 + 구분선) */
   .page__title {
     margin-bottom: 0.9em;
   }
@@ -186,7 +128,6 @@
     margin-top: 1.4em;
   }
 
-  /* 홈/게시글 목록 컴팩트 스타일 */
   .layout--home .archive__item-title {
     margin: 0.2em 0;
     font-size: 0.7em;
@@ -212,7 +153,6 @@
     font-weight: 600;
   }
 
-  /* 게시글 이미지 2열 그리드 */
   .img-grid-2 {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -227,94 +167,6 @@
   }
 
   @media (max-width: 700px) {
-    .img-grid-2 {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* Typography/layout stabilization overrides */
-  :root {
-    --content-max-width: 760px;
-    --content-font-size: 16px;
-    --content-line-height: 1.72;
-    --code-bg: rgba(135, 131, 120, 0.15);
-    --code-fg: #111111;
-  }
-
-  .page__inner-wrap {
-    max-width: var(--content-max-width) !important;
-    margin-inline: auto !important;
-  }
-
-  .page__content {
-    font-size: var(--content-font-size) !important;
-    line-height: var(--content-line-height);
-    letter-spacing: 0.01em;
-    word-break: keep-all;
-    overflow-wrap: anywhere;
-  }
-
-  .page__content p,
-  .page__content li,
-  .page__content td,
-  .page__content div {
-    max-width: none !important;
-    margin-inline: 0 !important;
-    line-height: inherit;
-  }
-
-  .page__content p {
-    margin: 0 0 1em;
-  }
-
-  .page__content li {
-    margin-bottom: 0.35em;
-  }
-
-  @media (max-width: 700px) {
-    .page__content {
-      font-size: 15px !important;
-      letter-spacing: 0.005em;
-    }
-  }
-
-  /* Inline code */
-  .page__content :not(pre) > code,
-  .page__content p code,
-  .page__content li code,
-  .page__content td code,
-  .page__content h1 code,
-  .page__content h2 code,
-  .page__content h3 code,
-  .page__content h4 code {
-    background: var(--code-bg) !important;
-    color: var(--code-fg) !important;
-    border: 1px solid rgba(135, 131, 120, 0.35);
-    border-radius: 6px;
-    padding: 0.12em 0.4em;
-  }
-
-  /* Code blocks */
-  .page__content div.highlighter-rouge,
-  .page__content figure.highlight,
-  .page__content pre,
-  .page__content pre.highlight,
-  .page__content pre code,
-  .page__content .highlight,
-  .page__content .highlight pre,
-  .page__content .highlight code {
-    background: var(--code-bg) !important;
-    color: var(--code-fg);
-    border-radius: 8px;
-  }
-
-  .page__content pre,
-  .page__content pre code {
-    line-height: 1.55;
-  }
-
-  .page__content .highlight .gh {
-    background: transparent !important;
-    color: var(--code-fg) !important;
+    .img-grid-2 { grid-template-columns: 1fr; }
   }
 </style>
