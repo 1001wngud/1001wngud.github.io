@@ -2,7 +2,7 @@
 
 ## 재부착 길이 추출, 파이프라인 구축, 난류모델 민감도 측정
 
-[이미지3]
+![BFS]({{ '/assets/posts/2026-02-16-pitzDailySteady-BFS-1/image03.png' | relative_url }})
 
 ### 요약
 
@@ -162,7 +162,28 @@ ls -al
 
 위에서 저장된 `checkMesh`와 `foamRun`의 log 뒷부분을 확인하여 수렴했는지 어디서 오류가 생겼는지 확인할 수 있었다.
 
+**출력 결과**
+```bash                         
+[Mesh]                                                                                
+Mesh has 2 solution (non-empty) directions (1 1 0)
+Mesh non-orthogonality Max: 5.95045 average: 1.63034
+Max skewness = 0.260575 OK.                                                                                   
+Mesh OK.                                                                                 
+```
 ```bash
+[Convergence]
+SIMPLE solution converged in 285 iterations
+```
+```bash
+[Evidence files]
+0/  100/  200/  285/  postProcessing/  
+```
+
+<details markdown="block">
+<summary>로그 원문(클릭)</summary>
+
+```bash
+
 joo@JOO-DESKTOP:~/OpenFOAM/joo-13/run/portfolio_openfoam/trackA/00_pitzDailySteady$ tail -n 25 log.checkMesh
 tail -n 35 log.foamRun
 ls -al
@@ -239,7 +260,10 @@ drwxr-xr-x 3 joo joo   4096 Jan 29 12:38 constant
 -rw-r--r-- 1 joo joo 196701 Jan 29 12:38 log.foamRun
 drwxr-xr-x 3 joo joo   4096 Jan 29 12:38 postProcessing
 drwxr-xr-x 2 joo joo   4096 Jan 29 12:37 system
+
 ```
+</details> 
+
 
 내 로그를 살펴보면 메쉬 품질, 해석 수렴, 증거 파일 생성이 잘 실행됐는지 확인할 수 있었다.
 
@@ -356,6 +380,30 @@ foamPostProcess -solver incompressibleFluid -func yPlus | tee log.yPlus
 실행 결과
 
 ```bash
+[Command]
+foamPostProcess -solver incompressibleFluid -func yPlus | tee log.yPlus
+```
+```bash
+[Model check]
+Selecting solver incompressibleFluid
+Selecting RAS turbulence model kEpsilon
+```
+```bash
+[Final (Time = 285s)]
+patch upperWall y+ : min = 2.81958, max = 7.24192, average = 6.08872
+patch lowerWall y+ : min = 0.338914, max = 26.5171, average = 16.0754
+```
+```bash
+[Stability evidence]
+Time = 100s ... upper avg = 6.09754, lower avg = 20.1757
+Time = 200s ... upper avg = 6.07561, lower avg = 16.9044
+Time = 285s ... upper avg = 6.08872, lower avg = 16.0754
+```
+
+<details markdown="block">
+<summary>로그 원문(클릭)</summary>
+
+```bash
 joo@JOO-DESKTOP:~/OpenFOAM/joo-13/run/portfolio_openfoam/trackA/00_pitzDailySteady$ cd ~/OpenFOAM/joo-13/run/portfolio_openfoam/trackA/00_pitzDailySteady
 
 # yPlus 계산 (모듈 솔버 정보까지 같이 로딩)
@@ -439,6 +487,9 @@ yPlus yPlus write:
 
 End
 ```
+
+</details>
+
 
 - **Solver 모듈:** `incompressibleFluid`.
 - **난류:** `RAS kEpsilon`

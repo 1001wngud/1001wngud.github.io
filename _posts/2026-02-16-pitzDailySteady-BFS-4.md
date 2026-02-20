@@ -34,7 +34,7 @@ cd 11_kOmegaSST
 
 ### 난류모델을 kOmegaSST로 교체
 
-kOmegaSST 는 뭔지 그리고 기존에 쓰던 k입실론과 무슨 차이가 있는지 설명
+kOmegaSST는 RANS에서 쓰는 2-방정식 난류모델로, k(난류 운동에너지)와 ω(특정 소산율)를 풀어 난류점성(난류 혼합의 강도)을 계산한다. 또한 SST는 벽 근처에서는 k-ω 성격을, 자유류에서는 k-ε 성격을 섞는(블렌딩) 구조이다. kEpsilon과 kOmegaSST의 차이는 평균 방정식이 바뀐 것이 아니라, 평균 방정식에 들어간 난류 응력(추가 저항/혼합 효과)을 계산하기 위해 쓰는 가정과 계산식가 바뀐 것이다. 쉽게 말해 난류점성 νt를 만드는 방식이 달라졌다고 할 수 있다.
 
 ```bash
 # 교체 전 확인
@@ -55,7 +55,7 @@ kOmegaSST는 `k`, `omega`, `nut`를 쓰기 때문에 추가가 됐는지 확인�
 ls 0 | egrep 'k$|epsilon$|omega$|nut$' || true
 ```
 
-그리고 `0/omega` 값이 튜토리얼 권장 계열인지 확인했다. 나 같은 경우는 internalField≈440.15, inlet value가 $internalField로 일관되어 있었다. OpenFOAM v13 backwardStep 튜토리얼에서도 `0/omega`에 440.2를 internalField와 inlet에 같이 쓰는 예를 든다.
+그리고 `0/omega` 값이 튜토리얼 권장 계열인지 확인했다. 나 같은 경우는 internalField≈440.15, inlet value가 $internalField로 내부값과 inlet 값이 일관되게 맞춰있었고 OpenFOAM v13 backwardStep 튜토리얼에서도 `0/omega`에 440.2를 사용한다.
 
 ```bash
 grep -n "internalField|inlet" 0/omega
@@ -249,7 +249,7 @@ done
 
 **왜 차이가 났을까?**
 
-k‑ε에서 k‑ω SST로 난류모델을 교체한 뒤 재부착 길이 xr/H가 **6.760→7.85** 수준으로 증가한 것은, Backward‑Facing Step(BFS)처럼 **박리–재부착이 지배적인 유동에서 난류모델이 박리 전단층의 난류 혼합(eddy viscosity)을 예측하는 방식이 달라지기 때문**이다. 재부착 위치는 전단층이 얼마나 빠르게 성장하고 혼합되어 벽으로 다시 붙는지에 민감하고 표준 k‑ε 모델은 BFS류 문제에서 재부착 길이를 실험보다 짧게 ****예측하는 경향이 여러 검증/연구에서 반복적으로 보고되어 왔다고 한다. (NASA TMR 참고)
+k‑ε에서 k‑ω SST로 난류모델을 교체한 뒤 재부착 길이 xr/H가 **6.760→7.85** 수준으로 증가한 것은, Backward‑Facing Step(BFS)처럼 **박리–재부착이 지배적인 유동에서 난류모델이 박리 전단층의 난류 혼합(eddy viscosity)을 예측하는 방식이 달라지기 때문**이다. 재부착 위치는 전단층이 얼마나 빠르게 성장하고 혼합되어 벽으로 다시 붙는지에 민감하고 표준 k‑ε 모델은 BFS류 문제에서 재부착 길이를 실험보다 짧게 예측하는 경향이 여러 검증/연구에서 반복적으로 보고되어 왔다고 한다. (NASA TMR 참고)
 
 반면, k-ω SST (Shear Stress Transport) 모델에서는 두 개의 난류 모델 상수/항을 블렌딩 함수 F₁로 연결하여 사용하는 구조를 갖는다.
 즉 SST는 서로 다른 난류 모델 상수 $\phi_1$과 $\phi_2$를 다음과 같이 가중 평균 형태로 결합한다:

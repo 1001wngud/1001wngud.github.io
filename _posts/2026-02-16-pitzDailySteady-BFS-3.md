@@ -54,6 +54,13 @@ awk '!/^#/ && NF>0{
 내 결과는 다음과 같았다.
 
 ```bash
+Reattachment estimate: x ~= 0.172121 m (between 0.17204 and 0.172403)
+```
+
+<details markdown="block">
+<summary>로그 원문(클릭)</summary>
+
+```bash
 joo@JOO-DESKTOP:~/OpenFOAM/joo-13/run/portfolio_openfoam/trackA/00_pitzDailySteady$ cd ~/OpenFOAM/joo-13/run/portfolio_openfoam/trackA/00_pitzDailySteady
 
 foamPostProcess -solver incompressibleFluid -func graphUniform_reattach -latestTime | tee log.graphUniform_reattach
@@ -111,6 +118,8 @@ Reattachment estimate: x ~= 0.172121 m (between 0.17204 and 0.172403)
 
 ```
 
+</details>
+
 내가 만든 near_wall에서 부호변화가 일어난 구간이 0.17204~0.172403 m 였다. 이 사이를 선형 보간으로 계산하여 재부착 위치 x = 0.172121 m의 값을 추출할 수 있었다.
 
 대부분의 재부착 길이는 $x_{r/H}$ 무원 재부착 길이로 표현한다.
@@ -142,6 +151,16 @@ END{printf("Ux min=%g, max=%g\n",min,max)}' "$f"
 내 결과는 다음과 같이 나왔다.
 
 ```bash
+H = 0.0254 m
+xr = 0.172121 m
+xr/H = 6.7764173
+Ux min=-0.0048397, max=0.00189621
+```
+
+<details markdown="block">
+<summary>로그 원문(클릭)</summary>
+
+```bash
 joo@JOO-DESKTOP:~/OpenFOAM/joo-13/run/portfolio_openfoam/trackA/00_pitzDailySteady$           
 H=$(awk '/^start/{gsub(/[();]/,""); print $2}' system/graphUniform_xH1)
                                                                        
@@ -160,6 +179,8 @@ awk '!/^#/ && NF>0{ if(NR==1){min=$2;max=$2} if($2<min)min=$2; if($2>max)max=$2 
 END{printf("Ux min=%g, max=%g\n",min,max)}' "$f"
 Ux min=-0.0048397, max=0.00189621
 ```
+
+</details>
 
 [이미지6]
 
@@ -212,6 +233,18 @@ done
 내 결과는 아래와 같이 나왔다.
 
 ```bash
+==== graphUniform_reattach ====
+xr = 0.172121 m (between 0.17204 and 0.172403)
+==== graphUniform_reattach_y05mm ====
+xr = 0.170107 m (between 0.169862 and 0.170225)
+==== graphUniform_reattach_y10mm ====
+xr = 0.168657 m (between 0.168411 and 0.168773)
+```
+
+<details markdown="block">
+<summary>로그 원문(클릭)</summary>
+
+```bash
 joo@JOO-DESKTOP:~/OpenFOAM/joo-13/run/portfolio_openfoam/trackA/00_pitzDailySteady$ for name in graphUniform_reattach graphUniform_reattach_y05mm graphUniform_reattach_y10mm; do
   foamPostProcess -solver incompressibleFluid -func $name -latestTime > log.$name
 
@@ -235,6 +268,8 @@ xr = 0.170107 m (between 0.169862 and 0.170225)
 ==== graphUniform_reattach_y10mm ====
 xr = 0.168657 m (between 0.168411 and 0.168773)
 ```
+
+</details>
 
 [이미지7]
 
@@ -277,7 +312,7 @@ xr = 0.168657 m (between 0.168411 and 0.168773)
 이번에는 재부착을 정의 기반으로 잡아서 추출 해볼 것이다.
 재부착점 : lowerWall에서 벽 전단응력 또는 skin-friction(Cf)이 0으로 바뀌는 지점 
 graphUniform_tauLowerWall의 입력값으로는 `wallShearStress` 필드가 필요하다.
-따라서, `wallShearStress` 를 먼저 계산하고 같은 foamPostProcess 실행 안에서 이어서 graphUniform을 돌릴 것이다. 
+따라서 `wallShearStress` 를 먼저 계산하고 같은 foamPostProcess 실행 안에서 이어서 graphUniform을 돌릴 것이다. 
 따로 실행하게 된다면 “cannot find required object wallShearStress”문구의 오류가 떠서 같이 실행하였다.
 
 ```bash

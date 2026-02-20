@@ -55,6 +55,22 @@ grep -RIn "RAS\|kEpsilon\|kOmega\|SST" constant 2>/dev/null | head -n 50
 이렇게 실행시켰을 때
 
 ```bash
+upperWall
+    {
+        type            nutkWallFunction;
+        value           uniform 0;
+    }
+    lowerWall
+    {
+        type            nutkWallFunction;
+        value           uniform 0;
+    }
+```
+
+<details markdown="block">
+<summary>로그 원문(클릭)</summary>
+
+```bash
 joo@JOO-DESKTOP:~/OpenFOAM/joo-13/run/portfolio_openfoam/trackA/00_pitzDailySteady$ # turbulent viscosity (nut) 벽 BC 확인
 sed -n '1,200p' 0/nut | sed -n '1,200p'
 grep -n "upperWall\|lowerWall" -n 0/nut
@@ -128,6 +144,8 @@ constant/momentumTransport:21:    // Tested with kEpsilon, realizableKE, kOmega,
 constant/momentumTransport:23:    model           kEpsilon;
 ```
 
+</details>
+
 upperWall과 lowerWall type을 확인했을때 표준 wall function(`nutkWallFunction`)인 것을 확인할 수 있었다.
 
 내 케이스는 표준 wall function을 쓰는 것이 파일로 확인됐지만 y+가 권장 범위보다 낮게 나오는 구간이 있다.
@@ -140,6 +158,24 @@ tail -n 60 log.wallShearStress285
 ```
 
  285 수렴된 해에서 벽 전단응력(τw)을 계산해서, y+ 해석이 박리/재부착 때문에 낮아진 건지 확인해봤다.
+
+```bash
+Create time
+
+Create mesh for time = 285
+
+wallShearStress wallShearStress:
+    processing all wall patches
+```
+```bash
+wallShearStress wallShearStress write:
+    writing object wallShearStress
+    min/max(upperWall) = (-0.469971 -0.0436448 -2.5536e-17), (-0.156361 0.0424164 1.5731e-17)
+    min/max(lowerWall) = (-0.6122 -0.129635 -5.77782e-18), (0.0915311 0.0738913 4.4785e-18)
+```
+
+<details markdown="block">
+<summary>로그 원문(클릭)</summary>
 
 ```bash
 joo@JOO-DESKTOP:~/OpenFOAM/joo-13/run/portfolio_openfoam/trackA/00_pitzDailySteady$ tail -n 60 log.wallShearStress285
@@ -187,6 +223,9 @@ wallShearStress wallShearStress write:
 End
 
 ```
+
+</details>
+
 
 `foamPostProcess ... wallShearStress ... -time 285`가 성공적으로 실행됐고
 
