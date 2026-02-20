@@ -231,4 +231,90 @@
       grid-template-columns: 1fr;
     }
   }
+
+  /* Typography/layout stabilization overrides */
+  :root {
+    --content-max-width: 760px;
+    --content-font-size: 16px;
+    --content-line-height: 1.72;
+    --code-bg: rgba(135, 131, 120, 0.15);
+    --code-fg: #111111;
+  }
+
+  .page__inner-wrap {
+    max-width: var(--content-max-width) !important;
+    margin-inline: auto !important;
+  }
+
+  .page__content {
+    font-size: var(--content-font-size) !important;
+    line-height: var(--content-line-height);
+    letter-spacing: 0.01em;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .page__content p,
+  .page__content li,
+  .page__content td,
+  .page__content div {
+    max-width: none !important;
+    margin-inline: 0 !important;
+    line-height: inherit;
+  }
+
+  .page__content p {
+    margin: 0 0 1em;
+  }
+
+  .page__content li {
+    margin-bottom: 0.35em;
+  }
+
+  @media (max-width: 700px) {
+    .page__content {
+      font-size: 15px !important;
+      letter-spacing: 0.005em;
+    }
+  }
+
+  /* Inline code */
+  .page__content :not(pre) > code,
+  .page__content p code,
+  .page__content li code,
+  .page__content td code,
+  .page__content h1 code,
+  .page__content h2 code,
+  .page__content h3 code,
+  .page__content h4 code {
+    background: var(--code-bg) !important;
+    color: var(--code-fg) !important;
+    border: 1px solid rgba(135, 131, 120, 0.35);
+    border-radius: 6px;
+    padding: 0.12em 0.4em;
+  }
+
+  /* Code blocks */
+  .page__content div.highlighter-rouge,
+  .page__content figure.highlight,
+  .page__content pre,
+  .page__content pre.highlight,
+  .page__content pre code,
+  .page__content .highlight,
+  .page__content .highlight pre,
+  .page__content .highlight code {
+    background: var(--code-bg) !important;
+    color: var(--code-fg);
+    border-radius: 8px;
+  }
+
+  .page__content pre,
+  .page__content pre code {
+    line-height: 1.55;
+  }
+
+  .page__content .highlight .gh {
+    background: transparent !important;
+    color: var(--code-fg) !important;
+  }
 </style>
