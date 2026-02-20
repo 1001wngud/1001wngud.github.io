@@ -99,7 +99,7 @@ baseline, SST 차이
 
 - p: `GAMG`, tolerance 1e-06, relTol 0.1, smoother GaussSeidel
 - pcorr: `GAMG`, tolerance 1e-06, relTol 0, smoother GaussSeidel
-- (U|k|epsilon|omega|f|v2): `smoothSolver`, symGaussSeidel, tolerance 1e-05, relTol 0.1
+- (U\|k\|epsilon\|omega\|f\|v2): `smoothSolver`, symGaussSeidel, tolerance 1e-05, relTol 0.1
 - SIMPLE
     - `nNonOrthogonalCorrectors 0; consistent yes;`
     - residualControl: p 1e-2, U 1e-3, turbulence fields 1e-3
