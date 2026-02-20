@@ -415,7 +415,10 @@ plot \
 "postProcessing/graphUniform_xH10/285/line.xy" u 2:1 title "x/H=10"
 ```
 
-[이미지3] [이미지5]
+<div class="img-grid-2">
+ <img src="{{ '/assets/posts/2026-02-16-pitzDailySteady-BFS-2/image03.png' | relative_url }}" alt="image03">
+ <img src="{{ '/assets/posts/2026-02-16-pitzDailySteady-BFS-2/image05.png' | relative_url }}" alt="image05">
+</div>
 
 Backward-Facing Step(BFS)에서는 스텝 직후에 유동이 분리(separation)되고, 아래쪽에 **재순환(역류) 영역**이 생겼다가, 아래로 갈수록 재부착(reattachment)하고 다시 회복한다.
 

@@ -211,4 +211,24 @@
   .layout--home .archive__item-title-text {
     font-weight: 600;
   }
+
+  /* 게시글 이미지 2열 그리드 */
+  .img-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 1em 0;
+  }
+
+  .img-grid-2 img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 700px) {
+    .img-grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>

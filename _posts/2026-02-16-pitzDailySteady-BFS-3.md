@@ -182,7 +182,7 @@ Ux min=-0.0048397, max=0.00189621
 
 </details>
 
-[이미지6]
+![image06]({{ '/assets/posts/2026-02-16-pitzDailySteady-BFS-3/image06.png' | relative_url }})
 
 **재부착 길이 `xr/H = 6.776`이 나왔고, Ux의 최소 최대 값을 비교해 보았을 때, `Ux min=-0.0048397, max=0.00189621` 의 값이 나온 것을 보아 음수에서 양수로 바뀌는 구간이 맞다고 판단하였다.**
 
@@ -271,7 +271,7 @@ xr = 0.168657 m (between 0.168411 and 0.168773)
 
 </details>
 
-[이미지7]
+![image07]({{ '/assets/posts/2026-02-16-pitzDailySteady-BFS-3/image07.png' | relative_url }})
 
 **결과 정리**
 
@@ -295,7 +295,10 @@ xr = 0.168657 m (between 0.168411 and 0.168773)
 
 **near-wall Ux=0-crossing은 y 위치가 증가함에 따라 xr가 감소하는 것을 확인할 수 있었다.**
 
-[이미지8][이미지9]
+<div class="img-grid-2">
+ <img src="{{ '/assets/posts/2026-02-16-pitzDailySteady-BFS-3/image08.png' | relative_url }}" alt="image08">
+ <img src="{{ '/assets/posts/2026-02-16-pitzDailySteady-BFS-3/image09.png' | relative_url }}" alt="image09">
+</div>
 
 그 이후에도 y가 0.2 mm, 0.5 mm, 1.0 mm, 2.0 mm 오프셋을 줬을 때의 재부착 길이를 각각 보간법으로 구해 민감도를 확인할 수 있었다.
 
@@ -379,7 +382,7 @@ END{
 }' "$f"
 ```
 
-[이미지10]
+![image10]({{ '/assets/posts/2026-02-16-pitzDailySteady-BFS-3/image10.png' | relative_url }})
 
 - 내 케이스에서는 `line.xy`에서 **x/H>1 이후 sign-change가 딱 1번 나타나고**,
     

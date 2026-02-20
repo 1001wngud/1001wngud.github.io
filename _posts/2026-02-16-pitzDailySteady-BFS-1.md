@@ -54,9 +54,10 @@ $25.4$ $mm$
 - 프로젝트에서 Step 높이
 $𝐻=0.0254$ $m$
 
-[이미지1]
-
-[이미지2]
+<div class="img-grid-2">
+ <img src="{{ '/assets/posts/2026-02-16-pitzDailySteady-BFS-1/image01.png' | relative_url }}" alt="image01">
+ <img src="{{ '/assets/posts/2026-02-16-pitzDailySteady-BFS-1/image02.png' | relative_url }}" alt="image02">
+</div>
 
 **Reynolds 수**
 
@@ -313,7 +314,7 @@ $y=$벽~첫 셀 중심 거리, $\nu=$동점성계수, $\tau_{\omega}=$벽전단�
 
 ### 벽 패치 이름 확정
 
-[이미지1]
+![Mesh1]({{ '/assets/posts/2026-02-16-pitzDailySteady-BFS-1/image01.png' | relative_url }})
 
 이전에 생성된 log.checkMesh를 살펴보면 upperWall과 lowerwall이 벽이다. (사진 참고)
 
