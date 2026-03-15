@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="IGE project placeholder image">
+  <defs>
+    <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#g2)"/>
+  <g fill="none" stroke="#99f6e4" stroke-width="4" opacity="0.55">
+    <path d="M110,260 C260,220 360,400 520,360 C690,320 820,170 980,230 C1060,260 1110,290 1140,310"/>
+    <path d="M110,380 C270,340 380,470 540,450 C700,430 850,310 980,360 C1060,390 1110,430 1140,460"/>
+    <path d="M110,500 C240,490 360,560 540,550 C690,540 820,470 980,490 C1060,500 1110,540 1140,570"/>
+  </g>
+  <rect x="80" y="90" width="150" height="46" rx="23" fill="#ccfbf1" opacity="0.9"/>
+  <text x="127" y="121" font-size="24" font-family="Arial, sans-serif" font-weight="700" fill="#052e2b">IGE</text>
+  <text x="80" y="250" font-size="52" font-family="Arial, sans-serif" font-weight="700" fill="#ffffff">CFD Study of</text>
+  <text x="80" y="312" font-size="52" font-family="Arial, sans-serif" font-weight="700" fill="#ffffff">In-Ground Effect</text>
+  <text x="80" y="374" font-size="24" font-family="Arial, sans-serif" fill="#e8fffb">OpenFOAM v13 propellerDisk · hover comparison across h/R</text>
+</svg>

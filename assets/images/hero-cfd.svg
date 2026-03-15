@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="JOO's CFD Study hero image">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="100%" stop-color="#1f3a5f"/>
+    </linearGradient>
+    <linearGradient id="l" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#e2e8f0" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <g fill="none" stroke="url(#l)" stroke-width="3">
+    <path d="M0,250 C220,180 320,360 540,300 C760,240 820,120 1010,190 C1200,260 1350,380 1600,320"/>
+    <path d="M0,340 C210,280 350,410 560,370 C760,330 860,180 1060,250 C1270,320 1410,470 1600,430"/>
+    <path d="M0,430 C160,390 320,490 540,470 C770,450 890,290 1100,340 C1310,390 1470,550 1600,520"/>
+    <path d="M0,520 C180,500 360,580 600,560 C820,540 930,410 1150,430 C1350,450 1490,620 1600,610"/>
+    <path d="M0,610 C190,610 390,660 620,650 C860,640 980,550 1190,560 C1390,570 1500,710 1600,720"/>
+  </g>
+  <g opacity="0.25" fill="#93c5fd">
+    <circle cx="250" cy="150" r="6"/>
+    <circle cx="460" cy="220" r="5"/>
+    <circle cx="720" cy="180" r="7"/>
+    <circle cx="980" cy="110" r="5"/>
+    <circle cx="1230" cy="250" r="6"/>
+    <circle cx="1410" cy="360" r="5"/>
+  </g>
+  <g fill="#ffffff" font-family="Arial, sans-serif">
+    <text x="110" y="620" font-size="74" font-weight="700">JOO's CFD Study</text>
+    <text x="112" y="682" font-size="30" opacity="0.9">Graduate-lab contact portfolio · repo-first project pages · markdown progress logs</text>
+    <text x="112" y="744" font-size="24" opacity="0.82">BFS reattachment pipeline · Propeller-disk IGE comparison</text>
+  </g>
+</svg>

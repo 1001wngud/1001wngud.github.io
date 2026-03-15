@@ -1,42 +1,63 @@
-title: "JOOs CFD Study"
-description: "Control · Dynamics · Robotics · Vision"
-lang: "en"
-timezone: "Asia/Seoul"
+title: "JOO's CFD Study"
+description: "CFD portfolio for graduate lab applications: BFS reattachment and propeller-disk IGE studies."
+url: "https://1001wngud.github.io"
+baseurl: "" # If your repo name is NOT '1001wngud.github.io', change this to "/REPO-NAME"
+repository: "1001wngud/1001wngud.github.io" # Change this if your site repo name is different
 
-remote_theme: "mmistakes/minimal-mistakes"
+markdown: kramdown
+remote_theme: "mmistakes/minimal-mistakes@4.28.0"
 
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-paginate
   - jekyll-include-cache
+  - jekyll-feed
+  - jekyll-sitemap
 
-mathjax: true
-markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM
-  math_engine: mathjax
-  syntax_highlighter: rouge
+include:
+  - _pages
 
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:path/
 
-minimal_mistakes_skin: "default"
+defaults:
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+      classes: wide
 
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      classes: wide
 
-nav:
-  - title: "About"
-    url: /about/
-  - title: "Posts"
-    url: /posts/
-  - title: "Projects"
-    url: /projects/
+  - scope:
+      path: "bfs"
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+      classes: wide
 
+  - scope:
+      path: "ige"
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+      classes: wide
 
-author:
-  name: "Joohyung Jung"
-  bio: "Mechanical Engineering student."
-  location: "Seoul, Korea"
+atom_feed:
+  hide: true
+
+footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"

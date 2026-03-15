@@ -1,0 +1,28 @@
+---
+# Only the main Sass file needs front matter
+search: false
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+/* Small custom touches for a cleaner research portfolio */
+.archive__item-teaser img {
+  border-radius: 14px;
+}
+
+.feature__item .archive__item {
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.btn {
+  border-radius: 999px;
+}
+
+.page__content {
+  line-height: 1.8;
+}
