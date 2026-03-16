@@ -1,9 +1,9 @@
 ---
 title: "BFS · 01. Track A README"
 permalink: /bfs/01-tracka-readme/
+layout: single
+mathjax: true
 ---
-
-[← Back to BFS Project]({{ "/portfolio/pitzdailysteady-bfs/" | relative_url }})
 
 ## 재부착 길이 추출, 파이프라인 구축, 난류모델 민감도 측정
 
