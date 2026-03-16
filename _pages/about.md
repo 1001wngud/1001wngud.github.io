@@ -5,13 +5,14 @@ permalink: /about/
 
 ## About this portfolio
 
-This website is a compact portfolio prepared for **graduate-lab contact**.
-It is focused on CFD study projects and emphasizes four things:
+This website presents a collection of self-directed CFD study projects.
+It documents how each problem was approached, set up, analyzed, and summarized
+through reproducible numerical workflows and structured progress records.
 
-- clear **problem definition**
+- exploration of **CFD-related problems**
 - reproducible **numerical setup**
-- organized **markdown progress logs**
-- concise and readable **result presentation**
+- structured **markdown progress logs**
+- clear and concise **result presentation**
 
 ## GitHub
 
@@ -19,6 +20,6 @@ It is focused on CFD study projects and emphasizes four things:
 - BFS repository: [CFD-Study-BFS](https://github.com/1001wngud/CFD-Study-BFS)
 - IGE repository: [CFD-Study-IGE](https://github.com/1001wngud/CFD-Study-IGE)
 
-## Note
+## Contact
 
-You can later add your name, e-mail, CV link, lab interests, or a short self-introduction on this page.
+Jung Joohyung(정주형), email: 1001-wngud@naver.com
